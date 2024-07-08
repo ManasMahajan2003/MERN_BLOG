@@ -9,7 +9,7 @@ export default function Home(){
     const navigate=useNavigate();
     async function fetchListOfBlogs(){
         setPending(true);
-        const response=await axios.get('http://localhost:5000/api/blogs');
+        const response=await axios.get('https://mern-blog-6k4x.onrender.com/api/blogs');
         const result=await response.data;
         if(result && result.blogList && result.blogList.length){
                 setBlogList(result.blogList);
@@ -20,7 +20,7 @@ export default function Home(){
         }
     }
     async function handleDeleteBlog(getCurrentId){
-        const response=await axios.delete(`http://localhost:5000/api/blogs/delete/${getCurrentId}`);
+        const response=await axios.delete(`https://mern-blog-6k4x.onrender.com/api/blogs/delete/${getCurrentId}`);
         const result=await response.data;
         if(result?.message){
             fetchListOfBlogs();

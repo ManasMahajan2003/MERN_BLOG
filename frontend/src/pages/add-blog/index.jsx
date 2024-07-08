@@ -9,10 +9,10 @@ export default function AddNewBlog(){
     const navigate=useNavigate();
     const location=useLocation();
     async function handleSaveBlogToDatabase(){
-        const response=isEdit?await axios.put(`http://localhost:5000/api/blogs/update/${location.state.getCurrentBlog._id}`,{
+        const response=isEdit?await axios.put(`https://mern-blog-6k4x.onrender.com/api/blogs/update/${location.state.getCurrentBlog._id}`,{
             title:formData.title,
             description:formData.description
-        }) : await axios.post('http://localhost:5000/api/blogs/add',{
+        }) : await axios.post('https://mern-blog-6k4x.onrender.com/api/blogs/add',{
             title:formData.title,
             description:formData.description
         })
